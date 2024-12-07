@@ -3,7 +3,7 @@ import './Navbar.css'
 import logo from '../Assets/logo.png'
 import nav_dropdown from '../Assets/nav_dropdown.png'
 import { Link } from 'react-router-dom'
-import { FaUser } from 'react-icons/fa'; 
+import UserIcon from '../Assets/png-transparent-user-profile-computer-icons-login-user-avatars-thumbnail.png'
 
 const Navbar = () => {
   const [menu, setMenu] = useState("shop");
@@ -30,12 +30,16 @@ const Navbar = () => {
       <div className="nav-login">
         <Link to='/login'>
           <button>
-            <FaUser /> {/* User iconu buton içine ekleniyor */}
+            <img 
+              src={UserIcon} // PNG dosyasını ekledik
+              alt="UserIcon" // Alternatif metin
+              style={{ width: '20px', height: '20px' }} // Boyutlandırma (isteğe bağlı)
+            />
           </button>
         </Link>
       </div>
     </div>
-  )
+  );
 }
 
 export default Navbar;
