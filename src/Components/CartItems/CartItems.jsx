@@ -1,18 +1,16 @@
-import React, { useContext, useState } from 'react'; // React Hook'ları dahil edildi
+import React, { useContext, useState } from 'react'; 
 import './CartItems.css';
 import { ShopContext } from '../../Context/ShopContext';
 import remove_icon from '../Assets/cart_cross_icon.png';
 
-
-
 const CartItems = () => {
   const { getTotalCartAmount, all_product, cartItems, removeFromCart } = useContext(ShopContext);
-  const [shippingFee, setShippingFee] = useState(0); // Shipping ücretini takip etmek için state
+  const [shippingFee, setShippingFee] = useState(0); 
 
   const ShippingOptions = () => {
-    // Alt bileşen olarak tanımlandı
+    
     const handleOptionChange = (fee) => {
-      setShippingFee(fee); // Shipping ücretini günceller
+      setShippingFee(fee); 
     };
 
     return (
@@ -23,7 +21,7 @@ const CartItems = () => {
             type="radio"
             id="standard"
             name="shipping"
-            onChange={() => handleOptionChange(0)} // Ücretsiz
+            onChange={() => handleOptionChange(0)} 
           />
           <label htmlFor="standard">Standard Shipping (Free)</label>
         </div>
@@ -32,7 +30,7 @@ const CartItems = () => {
             type="radio"
             id="express"
             name="shipping"
-            onChange={() => handleOptionChange(10)} // 10$ ücretli
+            onChange={() => handleOptionChange(10)} 
           />
           <label htmlFor="express">Express Shipping ($10)</label>
         </div>
@@ -76,6 +74,10 @@ const CartItems = () => {
         }
         return null;
       })}
+
+      
+      <ShippingOptions />
+
       <div className="cartitems-down">
         <div className="cartitems-total">
           <h1>Cart Totals</h1>
@@ -105,9 +107,6 @@ const CartItems = () => {
           </div>
         </div>
       </div>
-
-      {/* Shipping Options bileşenini burada render ediyoruz */}
-      <ShippingOptions />
     </div>
   );
 };

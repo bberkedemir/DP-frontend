@@ -205,13 +205,13 @@
 }
 
 .productdisplay-img {
-    position: relative; /* Resmin üzerine ikon yerleştirilebilmesi için relative pozisyon */
+    position: relative; 
 }
 
 .favorite-icon {
-    position: absolute; /* İkonu, ana konteynerin üst kısmına yerleştirir */
-    top: 10px; /* Resmin üst kısmından 10px mesafe */
-    right: 10px; /* Resmin sağ kısmından 10px mesafe */
+    position: absolute; 
+    top: 10px; 
+    right: 10px; 
     cursor: pointer;
-    z-index: 10; /* İkonun resmin üstünde görünmesini sağlamak için */
+    z-index: 10; 
 }

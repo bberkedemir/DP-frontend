@@ -18,7 +18,7 @@ const Navbar = () => {
     <div className='navbar'>
       <Link to='/' onClick={() => { setMenu("shop") }} className="nav-logo">
         <img src={logo} alt="" />
-        <p>BuyNow</p>
+        <p>Trendy Realm</p>
       </Link>
       <img onClick={dropdown_toggle} className='nav-dropdown' src={nav_dropdown} alt="" />
       <ul ref={menuRef} className="nav-menu">
@@ -31,9 +31,9 @@ const Navbar = () => {
         <Link to='/login'>
           <button>
             <img 
-              src={UserIcon} // PNG dosyasını ekledik
-              alt="UserIcon" // Alternatif metin
-              style={{ width: '20px', height: '20px' }} // Boyutlandırma (isteğe bağlı)
+              src={UserIcon} 
+              alt="UserIcon" 
+              style={{ width: '20px', height: '20px' }} 
             />
           </button>
         </Link>

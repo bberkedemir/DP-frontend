@@ -152,26 +152,20 @@
 }
 
 .shipping-options {
-    border: 2px solid black; /* Siyah çerçeve */
-    border-radius: 8px; /* Kenarların hafif yuvarlatılması */
-    background-color: white; /* Krem rengi (beige) */
-    padding: 20px; /* İç boşluk */
-    margin: 20px auto; /* Ortalamak için */
-    max-width: 400px; /* Kartın maksimum genişliği */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Hafif bir gölge */
+    margin-left: 10px;
+    margin-top: 60px;
+    font-size: 14px; 
+    width: 250px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
   }
   
   .shipping-option {
-    margin-bottom: 10px; /* Alt boşluk */
+    margin-bottom: 10px;
   }
   
-  .shipping-option label {
-    margin-left: 10px; /* Etiket ile radyo düğmesi arasındaki boşluk */
-  }
-  
-  .shipping-options h3 {
-    text-align: center; /* Başlık ortalanır */
-    margin-bottom: 20px; /* Başlık altına boşluk */
-    color: #333; /* Yazı rengi */
+  .shipping-option input {
+    margin-right: 8px; 
   }
   

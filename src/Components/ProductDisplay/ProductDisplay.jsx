@@ -3,7 +3,7 @@ import './ProductDisplay.css';
 import star_icon from "../Assets/star_icon.png";
 import star_dull_icon from "../Assets/star_dull_icon.png";
 import { ShopContext } from '../../Context/ShopContext';
-import { FaHeart, FaRegHeart } from 'react-icons/fa';  // Kalp ikonları
+import { FaHeart, FaRegHeart } from 'react-icons/fa';  
 
 const ProductDisplay = (props) => {
     const { product } = props;
@@ -12,12 +12,12 @@ const ProductDisplay = (props) => {
     const [selectedColor, setSelectedColor] = useState(null);
     const sizes = ['S', 'M', 'L', 'XL', 'XXL'];
     const [selectedSize, setSelectedSize] = useState(null);
-    const [isFavorite, setIsFavorite] = useState(false); // Favori durumunu tutan state
+    const [isFavorite, setIsFavorite] = useState(false); 
 
     const isAddToCartDisabled = selectedSize === null || selectedColor === null;
 
     const toggleFavorite = () => {
-        setIsFavorite(!isFavorite); // Favori durumu değiştirme
+        setIsFavorite(!isFavorite); 
     };
 
     return (
