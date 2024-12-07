@@ -155,6 +155,11 @@
     }
     
 }
+
+button.disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
 @media(max-width:500px){
     .cartitems-format-main{
        display: none;

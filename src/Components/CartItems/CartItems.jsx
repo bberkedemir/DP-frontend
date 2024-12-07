@@ -6,11 +6,14 @@ import remove_icon from '../Assets/cart_cross_icon.png';
 const CartItems = () => {
   const { getTotalCartAmount, all_product, cartItems, removeFromCart } = useContext(ShopContext);
   const [shippingFee, setShippingFee] = useState(0); 
+  const [selectedShipping, setSelectedShipping] = useState(null); 
+  const isCheckoutDisabled = selectedShipping === null;
 
   const ShippingOptions = () => {
     
-    const handleOptionChange = (fee) => {
+    const handleOptionChange = (fee, option) => {
       setShippingFee(fee); 
+      setSelectedShipping(option); 
     };
 
     return (
@@ -21,7 +24,7 @@ const CartItems = () => {
             type="radio"
             id="standard"
             name="shipping"
-            onChange={() => handleOptionChange(0)} 
+            onChange={() => handleOptionChange(0, 'standard')} 
           />
           <label htmlFor="standard">Standard Shipping (Free)</label>
         </div>
@@ -30,7 +33,7 @@ const CartItems = () => {
             type="radio"
             id="express"
             name="shipping"
-            onChange={() => handleOptionChange(10)} 
+            onChange={() => handleOptionChange(10, 'express')} 
           />
           <label htmlFor="express">Express Shipping ($10)</label>
         </div>
@@ -97,7 +100,11 @@ const CartItems = () => {
               <h3>${getTotalCartAmount() + shippingFee}</h3>
             </div>
           </div>
-          <button>PROCEED TO CHECKOUT</button>
+          <button 
+            disabled={isCheckoutDisabled} 
+            className={isCheckoutDisabled ? 'disabled' : ''}>
+            PROCEED TO CHECKOUT
+          </button>
         </div>
         <div className="cartitems-promocode">
           <p>If you have a promo code, enter it here</p>
