@@ -1,6 +1,6 @@
 import React, { useContext, useRef, useState } from 'react'
 import './Navbar.css'
-import logo from '../Assets/logo.png'
+import logo from '../Assets/mainlogo.png'
 import nav_dropdown from '../Assets/nav_dropdown.png'
 import { Link } from 'react-router-dom'
 import UserIcon from '../Assets/png-transparent-user-profile-computer-icons-login-user-avatars-thumbnail.png'
