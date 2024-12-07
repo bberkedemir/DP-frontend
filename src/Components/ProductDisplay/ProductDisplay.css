@@ -203,3 +203,15 @@
         font-size: 14px;
     }
 }
+
+.productdisplay-img {
+    position: relative; /* Resmin üzerine ikon yerleştirilebilmesi için relative pozisyon */
+}
+
+.favorite-icon {
+    position: absolute; /* İkonu, ana konteynerin üst kısmına yerleştirir */
+    top: 10px; /* Resmin üst kısmından 10px mesafe */
+    right: 10px; /* Resmin sağ kısmından 10px mesafe */
+    cursor: pointer;
+    z-index: 10; /* İkonun resmin üstünde görünmesini sağlamak için */
+}
