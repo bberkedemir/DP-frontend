@@ -3,6 +3,8 @@ import './ProductDisplay.css'
 import star_icon from "../Assets/star_icon.png";
 import star_dull_icon from "../Assets/star_dull_icon.png";
 import { ShopContext } from '../../Context/ShopContext';
+import heartfilled from '../Assets/heartfilled2.png'; 
+import heartempty from '../Assets/heartempty.png'; 
 
 const ProductDisplay = (props) => {
 
@@ -13,6 +15,10 @@ const ProductDisplay = (props) => {
     const sizes = ['S', 'M', 'L', 'XL', 'XXL']; 
     const [selectedSize, setSelectedSize] = useState(null); 
     const isAddToCartDisabled = selectedSize === null || selectedColor === null;
+    const [isFavorite, setIsFavorite] = useState(false);
+    const toggleFavorite = () => {
+        setIsFavorite(!isFavorite);
+    };
 
   return (
     <div className='productdisplay'>
@@ -25,6 +31,13 @@ const ProductDisplay = (props) => {
         </div>
         <div className="productdisplay-img">
             <img className='productdisplay-main-img' src={product.image} alt="" />
+            <div className="favorite-icon" onClick={toggleFavorite}>
+                <img 
+                    src={isFavorite ? heartfilled : heartempty} 
+                    alt="favorite-icon" 
+                    style={{ width: 30, height: 30 }} 
+                />
+            </div>
         </div>
       </div>
       <div className="productdisplay-right">
