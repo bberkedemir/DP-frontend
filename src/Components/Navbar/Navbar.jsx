@@ -1,7 +1,8 @@
 import React, { useContext, useRef, useState } from 'react'
 import './Navbar.css'
-import logo from '../Assets/logo.png'
+import logo from '../Assets/mainlogo.png'
 import nav_dropdown from '../Assets/nav_dropdown.png'
+import profileLogo from '../Assets/user.png'
 import { Link } from 'react-router-dom'
 import { FaUser } from 'react-icons/fa'; 
 
@@ -18,7 +19,7 @@ const Navbar = () => {
     <div className='navbar'>
       <Link to='/' onClick={() => { setMenu("shop") }} className="nav-logo">
         <img src={logo} alt="" />
-        <p>BuyNow</p>
+        <p>Trendy Realm</p>
       </Link>
       <img onClick={dropdown_toggle} className='nav-dropdown' src={nav_dropdown} alt="" />
       <ul ref={menuRef} className="nav-menu">
@@ -27,12 +28,8 @@ const Navbar = () => {
         <li onClick={() => { setMenu("womens") }}><Link to="womens">Women</Link>{menu === "womens" ? <hr /> : <></>}</li>
         <li onClick={() => { setMenu("kids") }}><Link to='/kids'>Kids</Link>{menu === "kids" ? <hr /> : <></>}</li>
       </ul>
-      <div className="nav-login">
-        <Link to='/login'>
-          <button>
-            <FaUser /> {/* User iconu buton içine ekleniyor */}
-          </button>
-        </Link>
+      <div className="nav-profile">
+        <Link to='/profile'><img src={profileLogo} alt="User Profile" /></Link>
       </div>
     </div>
   )
